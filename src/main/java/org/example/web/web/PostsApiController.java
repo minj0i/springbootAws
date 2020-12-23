@@ -2,7 +2,9 @@ package org.example.web.web;
 
 import lombok.RequiredArgsConstructor;
 import org.example.web.domain.posts.PostsService;
+import org.example.web.web.dto.PostsResponseDto;
 import org.example.web.web.dto.PostsSaveRequestDto;
+import org.example.web.web.dto.PostsUpdateRequestDto;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
@@ -16,13 +18,13 @@ public class PostsApiController {
         return postsService.save(requestDto);
     }
 
-    @PutMapping("/api/vi/posts/{id}")
+    @PutMapping("/api/v1/posts/{id}")
     public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) {
         return postsService.update(id, requestDto);
     }
 
     @GetMapping("/api/v1/posts/{id}")
-    public PostsResponseDto findById(@PathVariable) {
+    public PostsResponseDto findById(@PathVariable Long id) {
         return postsService.findById(id);
     }
 }
