@@ -1,11 +1,18 @@
 # Project exclude paths
-
 .gradle
-.idea
 
 # Intellij
 *.iml
 *.iws
+
+# IntelliJ project files
+.idea
+.idea/*.xml
+*.iml
+out
+gen
+build
+rebel.xml
 
 # Compiled Files
 *.class
@@ -13,3 +20,4 @@ bin/
 build/
 /bin1/
 java/build/**
+
